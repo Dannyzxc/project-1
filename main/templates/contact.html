@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %} my django project | contact{% endblock %}
+
+
+
+
+{% block body %}
+
+<form method="post" action="/contact/">
+    {% csrf_token %}
+<div class="form-row">
+    <div class="form-group col-md-6">
+        <label for="names">name</label>
+        <input type="text" class="form-control" id="names" name="name">
+      </div>
+
+    
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Email</label>
+        <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name="email">
+      </div>
+      
+    </div>
+    
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="phone">phone</label>
+        <input type="text" class="form-control" id="phone" name="phone">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="desc">description</label>
+        <textarea id="desc" class="form-control" name="desc">
+          
+        </textarea>
+      </div>
+      
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck">
+        <label class="form-check-label" for="gridCheck">
+          Check me out
+        </label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+
+</form>
+
+  {% endblock %}
